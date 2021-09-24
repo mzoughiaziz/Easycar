@@ -39,9 +39,6 @@
             @yield('content')
         </main>
     </div>
-    <a href="javascript:void(0)" class="back-to-top">
-      <i class="lni lni-chevron-up"> </i>
-    </a>
     <!-- ====== Back To Top End ====== -->
 
     <!-- ====== All Javascript Files ====== -->

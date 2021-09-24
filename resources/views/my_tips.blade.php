@@ -44,18 +44,15 @@
             </p>
           </div>
         </div>
+        
         <div class="col-lg-4">
-        <a href="">
+        <a href='delete/{{ $tip->id }}'>
             <button type="button" class="btn btn-default" >
               <img src="https://img.icons8.com/fluency/48/000000/delete-forever.png" height="25" width="25" /> 
             </button>
         </a>
-        <a href="">
-          <button type="button" class="btn btn-default">
-            <img src="https://img.icons8.com/pastel-glyph/64/000000/edit--v2.png" height="25" width="25" />
-          </button> 
-        </a> 
-      </div>
+        </div>
+      
       </div>
       @empty
         <span> you don't have any tips yet </span>

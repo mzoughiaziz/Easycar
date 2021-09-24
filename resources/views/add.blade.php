@@ -50,6 +50,5 @@
           </div>
         </div>
       </div>
-<!-- ====== Back To Top Start ====== -->
 
 @endsection

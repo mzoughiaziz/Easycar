@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Tips;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 
 class TipsController extends Controller
@@ -18,21 +17,14 @@ class TipsController extends Controller
         return view('my_tips' , ['tips'=>$tips]);
     }
 
-    // public function delete_tip($id){
-    //     $tips = Tips::where('id' , tip->id)->orderBy('created_at' , 'desc')->get();
-    //     return view('my_tips' , ['tips'=>$tips]);
-    // }
 
     public function tip_store(Request $request){
-      
         $request->validate([
             'modele' => ['required', 'string'],
             'brand' => ['required', 'string'],
             'type' => ['required', 'string'],
             'content' => ['required', 'string'],
-
-        ]);
-      
+        ]); 
          Tips::create([
             'model' => $request['modele'],
             'brand' => $request['brand'],
@@ -40,8 +32,13 @@ class TipsController extends Controller
             'version' => $request['version'],
             'content' => $request['content'],
             'creator_id' => auth()->user()->id ,
-        ]); 
-       
-        return redirect('mytips')->withStatus('New tip added successfully.');;
+        ]);       
+        return redirect('mytips')->withStatus('New tip added successfully.');
     }
+  
+    public function destroy($id) {
+        Tips::where('id', $id)->where('creator_id',auth()->user()->id)->delete();
+        return redirect('mytips')->withStatus('Tip Deleted Successfully');
+    }
+   
 }

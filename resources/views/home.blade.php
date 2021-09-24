@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- ====== Banner End ====== -->
 
-<!-- ====== Blog Start ====== -->
+
 <section class="ud-blog-grids">
   <div class="container">
     <div class="row" >
@@ -44,9 +43,6 @@
     </div>
   </div>
 </section>
-<!-- ====== Blog End ====== -->
 
-
-<!-- ====== Back To Top Start ====== -->
 
 @endsection
