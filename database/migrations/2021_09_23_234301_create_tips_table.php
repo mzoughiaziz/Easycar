@@ -20,6 +20,7 @@ class CreateTipsTable extends Migration
             $table->string('model');
             $table->string('version')->nullable();
             $table->longText('content');
+            $table->integer('creator_id');
             $table->timestamps();
         });
     }
